@@ -1,0 +1,3 @@
+Tworzymy tabele zmaterializowaną, co w mysql oznacza utworzenie nowej tabeli i skopiowanie do niej potrzebnych danych. 
+create table materializez_workers(
+select workers_name, workers_lastname, workers_remuneration from workers where workers_end_of_employment not like '0%')
