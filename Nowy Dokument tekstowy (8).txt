@@ -1,0 +1,10 @@
+W pierwszej kolejności uporządkował bym kod, jest on w dalszym ciągu przejrzysty ale w niektórych liniach wcięcia gryzą w oczy.
+Zamiast używać foreach oraz try/catch możemy użyć funkcji validate z laravela. Takie rozwiązanie skróci nasz kod. To samo możemy zastosować w drugim przypadku.
+Warto też dodać komentarze, które po przeczytaniu powiedzą nam lub też nakierują nas za co odpowiada dana część kodu To samo możemy wykonać w drugiej części.
+W funkcji updateUsers w warunku where występuje złe wprowadzenie danych z tabeli, zamiast $user['id'] powinno być $user->id, wynika to ze składni laravela.
+Laravel sam w sobie posiada lepszą funkcję zabezpieczenia hasła, zamiast uzywać md5 użyj funkcji Hash::make()
+W funkcji Mail::to ten sam błąd co w funkcji updateUsers, dodatkowo nie możesz w niej użyć ->subject oraz w tym przypadku ->queue zamiast ->queue uzyj ->send(new($message))
+
+
+
+
